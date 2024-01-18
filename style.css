@@ -1,0 +1,127 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100vh;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#game-board {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border: 10px outset black;
+}
+h1 {
+  margin: 0;
+  background-color: black;
+  color: white;
+  padding: 10px;
+border-radius: 10px;
+}
+
+.snake {
+  position: absolute;
+  background-color: gray;
+  width: 15px;
+  height: 15px;
+  /* border-radius: 50%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.snake:nth-child(1){
+  background-color: black;
+  border-radius: 30%;
+  width: 15px;
+  height: 15px;
+}
+
+/* .snake .eye {
+  position: absolute;
+  background-color: black;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+} */
+
+/* .snake .left-eye {
+  top: 4px;
+  left: 4px;
+}
+
+.snake .right-eye {
+  top: 4px;
+  right: 4px;
+} */
+
+/* .snake .mouth {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  top: 10px;
+  left: 6px;
+} */
+
+.food {
+  position: absolute;
+  background-color: #FF5722;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  animation: move .2s linear infinite;
+}
+@keyframes move {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.198;
+  }
+  
+}
+button{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  border: transparent;
+}
+
+/* Media Query for screens with a maximum width of 600 pixels */
+@media screen and (max-width: 600px) {
+  body{
+    background-position:right;
+    height: 100vh;
+  }
+  .snake {
+      width: 15px;
+      height: 15px;
+  }
+
+  .snake:before {
+      width: 6px;
+      height: 6px;
+  }
+
+  .snake .eye {
+      width: 2px;
+      height: 2px;
+  }
+
+  .snake .mouth {
+      width: 6px;
+      height: 6px;
+      top: 7px;
+      left: 4px;
+  }
+}
